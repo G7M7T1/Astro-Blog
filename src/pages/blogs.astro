@@ -22,10 +22,22 @@ const blogs = Astro.fetchContent<MarkdownFrontmatter>('./blogs/**/*.md')
 		<style lang="scss">
 			.blogs {
 				width: 100%;
+				padding: 0 2rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				margin: 0 0 3rem 0;
+
+				.blogTitle {
+					margin: 5rem 0;
+				}
+
+				.blogList {
+					display: grid;
+					grid-template-columns: repeat(1, minmax(0, 1fr));
+					gap: 2rem;
+				}
 			}
 		</style>
 	</head>

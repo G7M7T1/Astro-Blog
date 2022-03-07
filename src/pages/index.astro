@@ -1,11 +1,11 @@
 ---
-import Tour from '../components/Tour.astro'
 import Nav from "../components/Nav/Nav.jsx"
 import Banner from "../components/Banner/Banner.jsx"
 import Card from "../components/Card/Card.jsx"
 
 const blogs = Astro.fetchContent('./blogs/**/*.md');
-const featuredBlog = blogs[0];
+const featuredBlog1 = blogs[0];
+const featuredBlog2 = blogs[1];
 ---
 
 <html lang="en">
@@ -13,22 +13,49 @@ const featuredBlog = blogs[0];
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>G7M7T1</title>
-
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<style global>
 		@import "../styles/global.css";
 	</style>
 
 	<style lang="scss">
+	.mainIndex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
+	.index {
+		display:grid;
+		gap: 2rem;
+	}
+
+	@media screen and (min-width: 310px) {
+		.index {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			padding: 1rem;
+			margin-top: 2rem;
+		}
+	}
+
+	@media screen and (min-width: 850px) {
+		.index {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			padding: 5rem;
+			margin-top: 0;
+		}
+	}
 	</style>
 </head>
 <body>
 	<Nav />
 	<Banner />
-	<main>
-		<Card blog={featuredBlog} />
-		<Tour />
-	</main>
+	<div class="mainIndex">
+		<main class="index">
+			<Card blog={featuredBlog1} />
+			<Card blog={featuredBlog2} />
+		</main>
+	</div>
 </body>
 </html>

@@ -8,8 +8,12 @@ const Banner = () => {
       <h1>G7M7T1</h1>
       <h3>Developer / Content Creator / Graphic Designer</h3>
       <div className="buttons">
-        <Button>Check Blog</Button>
-        <Button>About Me</Button>
+        <a href="/blogs">
+          <Button>Check Blog</Button>
+        </a>
+        <a href="/about">
+          <Button>About Me</Button>
+        </a>
       </div>
     </div>
   );

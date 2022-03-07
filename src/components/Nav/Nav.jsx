@@ -4,7 +4,10 @@ const Nav = () => {
   return (
     <nav className="nav">
       <a className="logo" href="/">
-        <img src="mylogo1.png" alt="Logo" />
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/gmt-db.appspot.com/o/mylogo1.png?alt=media&token=bb991363-adb0-4f3d-b229-4b8b3727bf0c"
+          alt="Logo"
+        />
         <h3>GMT</h3>
       </a>
 

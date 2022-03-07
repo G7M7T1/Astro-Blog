@@ -1,3 +1,86 @@
 .card {
-    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    max-width: 750px;
+
+    .cardTitle {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .cardInfo {
+        margin-top: 300px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+
+        .cardDesc {
+            display: flex;
+            padding: 1rem 1rem;
+        }
+
+        .cardTags {
+            display: flex;
+            padding: 0 1rem 1rem 1rem;
+            text-transform: uppercase;
+
+            .cardTag {
+                margin-left: 0.5rem;
+
+                &:nth-of-type(1n) {
+                    color: rgb(108, 255, 108);
+                }
+
+                &:nth-of-type(2n) {
+                    color: rgb(255, 189, 65);
+                }
+
+                &:nth-of-type(3n) {
+                    color: rgb(106, 106, 255);
+                }
+
+                &:nth-of-type(4n) {
+                    color: rgb(255, 205, 214);
+                }
+            }
+        }
+
+        .cardLink {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            background: rgba(0, 0, 0, 0.25);
+            font-weight: 900;
+            opacity: 0;
+            text-transform: uppercase;
+            transition: opacity 150ms linear;
+
+            .linkInner {
+                padding: 0.375em 1em;
+                border: 2px solid rgba(255, 255, 255, 0);
+                transition: transform 300ms cubic-bezier(0, 0.4, 0.6, 1), border-color 1s linear;
+                transform: translateY(25%);
+            }
+
+            &:hover {
+                opacity: 1;
+
+                .linkInner {
+                    transform: translateY(0);
+                    border-color: rgba(255, 255, 255, 0.625);
+                }
+            }
+        }
+    }
 }

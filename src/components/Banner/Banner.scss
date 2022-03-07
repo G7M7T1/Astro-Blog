@@ -10,7 +10,6 @@
     background-repeat: no-repeat;
 
     h1 {
-        font-size: 8rem;
         font-weight: 700;
     }
 
@@ -21,5 +20,25 @@
     .buttons {
         display: flex;
         margin-top: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 310px) {
+    .banner h1 {
+        font-size: 3rem;
+    }
+
+    .banner h3 {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .banner h1 {
+        font-size: 8rem;
+    }
+
+    .banner h3 {
+        font-size: 1.5rem;
     }
 }

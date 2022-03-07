@@ -1,13 +1,22 @@
 ---
+import Nav from "../Nav/Nav.jsx"
 const { content } = Astro.props;
 ---
 
 <html lang={content.lang || 'en'}>
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>G7M7T1</title>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<style global>
+			@import "../../styles/global.css";
+		</style>
 		<style lang="scss">
 		</style>
 	</head>
 	<body>
+		<Nav />
 		<header style={`background-image:url(${content.img})`} class="hero">
 			<h1 class="title">{content.title}</h1>
 		</header>
