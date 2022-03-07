@@ -35,10 +35,25 @@ const blogs = Astro.fetchContent<MarkdownFrontmatter>('./blogs/**/*.md')
 
 				.blogList {
 					display: grid;
-					grid-template-columns: repeat(1, minmax(0, 1fr));
 					gap: 2rem;
 				}
 			}
+
+				@media screen and (min-width: 310px) {
+					.blogList {
+						grid-template-columns: repeat(1, minmax(0, 1fr));
+						padding: 1rem;
+						margin-top: 2rem;
+					}
+				}
+
+				@media screen and (min-width: 850px) {
+					.blogList {
+						grid-template-columns: repeat(2, minmax(0, 1fr));
+						padding: 5rem;
+						margin-top: 0;
+					}
+				}
 		</style>
 	</head>
 	<body>

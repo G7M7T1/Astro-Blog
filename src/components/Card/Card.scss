@@ -4,6 +4,9 @@
     background-repeat: no-repeat;
     position: relative;
     max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 
     .cardTitle {
         position: absolute;
@@ -15,7 +18,11 @@
     .cardInfo {
         margin-top: 300px;
         background-color: rgba(0, 0, 0, 0.8);
+        min-height: 130px;
         color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         .cardDesc {
             display: flex;

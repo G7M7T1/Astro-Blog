@@ -7,23 +7,86 @@ const { content } = Astro.props;
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
-		<title>G7M7T1</title>
+		<title>{`G7M7T1 | ${content.title}`}</title>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<style global>
 			@import "../../styles/global.css";
 		</style>
 		<style lang="scss">
+			.bloginTitle {
+				height: 450px;
+				width: 100%;
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				.title {
+					margin-bottom: 2rem
+				}
+
+				.bloginInfo {
+					text-align: center;
+
+					.bloginTags {
+						.bloginTag {
+							margin-left: 1rem;
+							text-transform: uppercase;
+							&:nth-of-type(1n) {
+								color: rgb(108, 255, 108);
+							}
+
+							&:nth-of-type(2n) {
+								color: rgb(255, 189, 65);
+							}
+
+							&:nth-of-type(3n) {
+								color: rgb(106, 106, 255);
+							}
+
+							&:nth-of-type(4n) {
+								color: rgb(255, 205, 214);
+							}
+						}
+						.bloginDesc {
+							margin-top: 2rem;
+							text-transform: lowercase;
+						}
+					}
+				}
+			}
+
+			.bloginContents {
+				margin-top: 3rem;
+				width: 80%;
+			}
+
+			.TotalBlog {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 		</style>
 	</head>
 	<body>
-		<Nav />
-		<header style={`background-image:url(${content.img})`} class="hero">
-			<h1 class="title">{content.title}</h1>
-		</header>
-		<div class="leadIn">
-			<div class="wrapper pt8 pb8 mb8 tac">
-				{content.tags.map((t) => <span class="tag">{t}</span>)}
-				<h3 class="tagline">{content.description}</h3>
+		<div class="TotalBlog">
+			<Nav />
+			<header style={`background-image:url(${content.img})`} class="bloginTitle">
+				<h1 class="title">{content.title}</h1>
+				<div class="bloginInfo">
+					<div class="bloginTags">
+						{content.tags.map((t) => <span class="bloginTag">{t}</span>)}
+						<h3 class="bloginDesc">{content.description}</h3>
+					</div>
+				</div>
+			</header>
+
+			<div class="bloginContents">
+				<div class="content"><slot /></div>
 			</div>
 		</div>
 	</body>
