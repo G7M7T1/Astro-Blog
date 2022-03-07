@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.23.7",
+    "sass": "^1.49.9"
+  }
+}
