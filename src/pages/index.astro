@@ -2,9 +2,10 @@
 import Tour from '../components/Tour.astro'
 import Nav from "../components/Nav/Nav.jsx"
 import Banner from "../components/Banner/Banner.jsx"
+import Card from "../components/Card/Card.jsx"
 
-// const blogs = Astro.fetchContent('./blogs/**/*.md');
-// const featuredBlog = blogs[0];
+const blogs = Astro.fetchContent('./blogs/**/*.md');
+const featuredBlog = blogs[0];
 ---
 
 <html lang="en">
@@ -26,7 +27,7 @@ import Banner from "../components/Banner/Banner.jsx"
 	<Nav />
 	<Banner />
 	<main>
-
+		<Card blog={featuredBlog} />
 		<Tour />
 	</main>
 </body>

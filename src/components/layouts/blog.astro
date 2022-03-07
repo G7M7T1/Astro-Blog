@@ -1,0 +1,21 @@
+---
+const { content } = Astro.props;
+---
+
+<html lang={content.lang || 'en'}>
+	<head>
+		<style lang="scss">
+		</style>
+	</head>
+	<body>
+		<header style={`background-image:url(${content.img})`} class="hero">
+			<h1 class="title">{content.title}</h1>
+		</header>
+		<div class="leadIn">
+			<div class="wrapper pt8 pb8 mb8 tac">
+				{content.tags.map((t) => <span class="tag">{t}</span>)}
+				<h3 class="tagline">{content.description}</h3>
+			</div>
+		</div>
+	</body>
+</html>

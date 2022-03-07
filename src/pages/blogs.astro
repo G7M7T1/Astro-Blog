@@ -1,0 +1,41 @@
+---
+import Card from "../components/Card/Card.jsx"
+import Nav from "../components/Nav/Nav.jsx"
+
+interface MarkdownFrontmatter {
+	publishDate: number;
+}
+
+const blogs = Astro.fetchContent<MarkdownFrontmatter>('./blogs/**/*.md')
+	.filter(({ publishDate }) => !!publishDate)
+	.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>G7M7T1 | Blogs</title>
+		<style global>
+			@import "../styles/global.css";
+		</style>
+		<style lang="scss">
+			.blogs {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="blogs">
+			<h1 class="blogTitle">All Blogs</h1>
+			<div class="blogList">
+				{blogs.map((blog) => <Card blog={blog} />)}
+			</div>
+		</div>
+	</body>
+</html>
