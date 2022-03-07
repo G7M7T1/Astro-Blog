@@ -1,0 +1,25 @@
+.banner {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+        font-size: 8rem;
+        font-weight: 700;
+    }
+
+    h3 {
+        color: rgb(82, 82, 82);
+    }
+
+    .buttons {
+        display: flex;
+        margin-top: 1.5rem;
+    }
+}

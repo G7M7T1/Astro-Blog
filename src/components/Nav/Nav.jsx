@@ -3,12 +3,15 @@ import "./Nav.scss";
 const Nav = () => {
   return (
     <nav className="nav">
-      <div className="logo">
+      <a className="logo" href="/">
         <img src="mylogo1.png" alt="Logo" />
         <h3>GMT</h3>
-      </div>
+      </a>
 
       <ul className="navlink">
+        <li>
+          <a href="/">Home</a>
+        </li>
         <li>
           <a href="/about">Blog</a>
         </li>

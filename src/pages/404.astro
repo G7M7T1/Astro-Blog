@@ -1,0 +1,50 @@
+---
+import Nav from "../components/Nav/Nav.jsx"
+---
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>G7M7T1 | 404</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<style global>
+		@import "../styles/global.css";
+	</style>
+	<style lang="scss">
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-image: url("cloud.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            h1 {
+                font-size: 8rem;
+            }
+
+            p {
+                font-weight: 600;
+            }
+    }
+	</style>
+</head>
+<body>
+	<Nav />
+	<main>
+        <h3>Oh no, Its error</h3>
+        <h1>404</h1>
+        <p>I Can Not Find Page You Want, Maybe Its Time Go Back</p>
+	</main>
+</body>
+</html>
