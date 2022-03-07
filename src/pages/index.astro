@@ -2,6 +2,9 @@
 import Tour from '../components/Tour.astro'
 import Nav from "../components/Nav/Nav.jsx"
 import Banner from "../components/Banner/Banner.jsx"
+
+// const blogs = Astro.fetchContent('./blogs/**/*.md');
+// const featuredBlog = blogs[0];
 ---
 
 <html lang="en">
@@ -15,20 +18,15 @@ import Banner from "../components/Banner/Banner.jsx"
 		@import "../styles/global.css";
 	</style>
 
-	<style>
-		header {
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-			max-width: min(100%, 68ch);
-		}
+	<style lang="scss">
+
 	</style>
 </head>
 <body>
 	<Nav />
 	<Banner />
 	<main>
-		
+
 		<Tour />
 	</main>
 </body>
